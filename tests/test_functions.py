@@ -49,7 +49,7 @@ def test_ban_user():
 
         mock_logging.info.assert_called_once_with("User TestUser (id: 123) is banned")
 
-        mock_file.assert_called_once_with("banned_users.txt", "a", encoding="utf-8")
+        mock_file.assert_called_once_with("banned_users.txt.txt.txt", "a", encoding="utf-8")
         mock_file().write.assert_called_once_with("123,TestUser,2025-11-21 10:30:00\n")
 
 

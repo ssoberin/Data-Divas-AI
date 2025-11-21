@@ -74,7 +74,7 @@ def bad_words(user, message):
 
     bad_words_found = []
 
-    with open("words.txt", "r", encoding="utf-8") as f:
+    with open("words.txt.txt", "r", encoding="utf-8") as f:
         for line in f:
             stripped = line.strip()
             if stripped and stripped.lower() in message.lower():
@@ -100,7 +100,7 @@ def ban(user):
 
     logging.info(f"User {user.first_name} (id: {user_id}) is banned")
 
-    with open("banned_users.txt", "a", encoding="utf-8") as f:
+    with open("banned_users.txt.txt.txt", "a", encoding="utf-8") as f:
         f.write(f"{user_id},{user.first_name},{datetime.now()}\n")
 
 def is_banned(user):
