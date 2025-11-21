@@ -1,7 +1,12 @@
 from unittest.mock import MagicMock, patch, mock_open
 import sys
 
-sys.path.insert(0, r'C:\\Users\\Honor\\PycharmProjects3\\Data_Divas_AI')
+import os
+from pathlib import Path
+current_file = Path(__file__).resolve()
+project_root = current_file.parent.parent
+
+sys.path.insert(0, str(project_root))
 
 from functions import bad_words, ban, is_banned, banned_users, user_warnings
 

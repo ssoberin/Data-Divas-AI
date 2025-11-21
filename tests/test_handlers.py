@@ -2,7 +2,12 @@ import pytest
 from unittest.mock import MagicMock, AsyncMock, patch
 from telegram import Update, Message, User
 import sys
-sys.path.insert(0, r'C:\\Users\\Honor\\PycharmProjects3Data_Divas_AI')
+import os
+from pathlib import Path
+current_file = Path(__file__).resolve()
+project_root = current_file.parent.parent
+
+sys.path.insert(0, str(project_root))
 from handlers import start, about, help_handler, reset, handle_message
 
 pytestmark = pytest.mark.asyncio # все тесты здесь - асинхронные
